@@ -1,3 +1,4 @@
+import { CountriesService } from './../../../countries/services/countries.service';
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { Subject, Subscription, debounceTime } from 'rxjs';
 
@@ -13,6 +14,9 @@ export class SearchBoxComponent implements OnInit, OnDestroy {
 
   @Input()
   public placeholder: string = '';
+
+  @Input()
+  public value: string = '';
 
   @Output()
   public onValue = new EventEmitter<string>();
